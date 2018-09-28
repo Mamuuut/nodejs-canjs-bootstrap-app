@@ -1,0 +1,17 @@
+@orange : #f09000;
+@grey   : #aaa;
+
+button {
+    cursor      : pointer;
+    background  : @orange;
+    border      : none;
+    color       : #fff;
+    font-size   : 1em;
+    font-weight : bold;
+    padding     : .5em 1em;
+    text-shadow : 1px 1px 1px #666;
+
+    &:hover {
+        background : lighten(@orange, 10%);
+    }
+}

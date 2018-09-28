@@ -1,0 +1,75 @@
+@import "style/shared.less";
+
+@logo-width : 140px;
+
+html {
+    font-size   : 16px;
+    font-family : sans-serif;
+}
+
+html, body {
+    margin  : 0;
+    padding : 0;
+}
+
+#container {
+    padding  : 2em;
+    position : absolute;
+    top      : 0;
+    bottom   : 0;
+    left     : 0;
+    right    : 0;
+    overflow : hidden;
+}
+
+ul {
+    list-style : none;
+    margin     : 0;
+    padding    : 0;
+}
+
+@keyframes rotate {
+    10%, 90% {
+        transform: rotate(0deg);
+    }
+    40%, 60% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    10%, 90% {
+        -webkit-transform: rotate(0deg);
+    }
+    40%, 60% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.anim-rotate(@time: 3s)
+{
+    animation         : rotate @time infinite ease-in-out;
+    -webkit-animation : rotate @time infinite ease-in-out;
+}
+
+.loading {
+    position   : absolute;
+    top        : 0;
+    bottom     : 0;
+    right      : 0;
+    left       : 0;
+    background : rgba(255, 255, 255, .5);
+
+    .loading-logo {
+        background        : url('./image/logo.svg');
+        background-repeat : no-repeat;
+        background-size   : cover;
+        height            : @logo-width;
+        left              : 50%;
+        margin-left       : -@logo-width / 2;
+        margin-top        : -@logo-width / 2;
+        position          : absolute;
+        top               : 45%;
+        width             : @logo-width;
+        .anim-rotate();
+    }
+}
